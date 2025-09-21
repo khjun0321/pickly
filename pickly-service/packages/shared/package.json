@@ -1,0 +1,40 @@
+{
+  "name": "pickly-shared",
+  "version": "1.0.0",
+  "description": "Shared utilities and configurations for Pickly platform",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "date-fns": "^2.30.0",
+    "lodash-es": "^4.17.21",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.9",
+    "typescript": "^5.2.0",
+    "vitest": "^0.34.0",
+    "eslint": "^8.51.0",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0"
+  },
+  "files": [
+    "dist"
+  ]
+}

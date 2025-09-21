@@ -1,0 +1,79 @@
+name: pickly-service
+repository: https://github.com/kwonhyunjun/pickly-service
+
+packages:
+  - apps/**
+  - backend/**
+  - packages/**
+
+command:
+  version:
+    updateGitTagRefs: true
+    releaseUrl: true
+    workspaceChangelog: true
+
+  bootstrap:
+    runPubGetInParallel: true
+    usePubspecOverrides: true
+
+  clean:
+    hooks:
+      pre: rm -rf **/node_modules **/.dart_tool **/build
+
+scripts:
+  analyze:
+    run: dart analyze .
+    description: Run analysis on all packages
+    packageFilters:
+      dirExists: lib
+
+  format:
+    run: dart format --set-exit-if-changed .
+    description: Format all Dart code
+    packageFilters:
+      dirExists: lib
+
+  test:
+    run: dart test
+    description: Run tests for all packages
+    packageFilters:
+      dirExists: test
+
+  test:coverage:
+    run: dart test --coverage=coverage && genhtml coverage/lcov.info -o coverage/html
+    description: Generate test coverage reports
+    packageFilters:
+      dirExists: test
+
+  lint:
+    run: dart analyze
+    description: Lint all packages
+    packageFilters:
+      dirExists: lib
+
+  build:web:
+    run: flutter build web --release
+    description: Build web applications
+    packageFilters:
+      dirExists: web
+      dependsOn: flutter
+
+  build:mobile:
+    run: flutter build apk --release
+    description: Build mobile applications
+    packageFilters:
+      dirExists: android
+      dependsOn: flutter
+
+  dev:
+    run: flutter run -d chrome --hot-reload
+    description: Run in development mode
+    packageFilters:
+      dirExists: lib
+      dependsOn: flutter
+
+ide:
+  intellij:
+    enabled: true
+  vscode:
+    enabled: true

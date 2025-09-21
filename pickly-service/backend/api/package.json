@@ -1,0 +1,58 @@
+{
+  "name": "pickly-api",
+  "version": "1.0.0",
+  "description": "Pickly REST API server",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "lint": "eslint src --ext .ts,.js",
+    "lint:fix": "eslint src --ext .ts,.js --fix",
+    "typecheck": "tsc --noEmit",
+    "db:migrate": "drizzle-kit migrate",
+    "db:generate": "drizzle-kit generate:pg",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "fastify": "^4.24.0",
+    "@fastify/cors": "^8.4.0",
+    "@fastify/helmet": "^11.1.0",
+    "@fastify/rate-limit": "^8.1.0",
+    "@fastify/jwt": "^7.2.0",
+    "@fastify/swagger": "^8.12.0",
+    "@fastify/swagger-ui": "^2.0.0",
+    "drizzle-orm": "^0.28.0",
+    "postgres": "^3.4.0",
+    "redis": "^4.6.0",
+    "bcryptjs": "^2.4.3",
+    "joi": "^17.11.0",
+    "nodemailer": "^6.9.0",
+    "sharp": "^0.32.0",
+    "multer": "^1.4.5-lts.1",
+    "@aws-sdk/client-s3": "^3.427.0",
+    "winston": "^3.11.0",
+    "pickly-shared": "workspace:*",
+    "pickly-types": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.0",
+    "@types/bcryptjs": "^2.4.4",
+    "@types/nodemailer": "^6.4.11",
+    "@types/multer": "^1.4.8",
+    "tsx": "^3.13.0",
+    "typescript": "^5.2.0",
+    "vitest": "^0.34.0",
+    "drizzle-kit": "^0.19.0",
+    "eslint": "^8.51.0",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
