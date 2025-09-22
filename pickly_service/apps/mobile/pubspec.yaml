@@ -1,0 +1,89 @@
+name: pickly_mobile
+description: Pickly 모바일 애플리케이션 - 정부 정책/혜택 정보 서비스
+version: 1.0.0+1
+publish_to: 'none'
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State management
+  flutter_riverpod: ^2.4.0
+  riverpod_annotation: ^2.3.0
+
+  # Networking
+  dio: ^5.3.0
+  retrofit: ^4.0.0
+
+  # UI/UX
+  flutter_screenutil: ^5.9.0
+  cached_network_image: ^3.3.0
+  shimmer: ^3.0.0
+
+  # Navigation
+  go_router: ^12.0.0
+
+  # Local storage
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  shared_preferences: ^2.2.0
+
+  # Authentication & Backend
+  supabase_flutter: ^2.0.0
+  google_sign_in: ^6.1.0
+
+  # Push notifications
+  flutter_local_notifications: ^16.0.0
+
+  # Media
+  image_picker: ^1.0.0
+  photo_view: ^0.14.0
+
+  # Utils
+  intl: ^0.18.0
+  url_launcher: ^6.2.0
+  package_info_plus: ^5.0.0
+
+  # Shared packages
+  pickly_shared:
+    path: ../../packages/shared
+  pickly_ui:
+    path: ../../packages/ui
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Code generation
+  build_runner: ^2.4.0
+  riverpod_generator: ^2.3.0
+  retrofit_generator: ^8.0.0
+  hive_generator: ^2.0.0
+
+  # Linting
+  flutter_lints: ^3.0.0
+
+  # Testing
+  mockito: ^5.4.0
+  integration_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/fonts/
+
+  fonts:
+    - family: Pretendard
+      fonts:
+        - asset: assets/fonts/Pretendard-Regular.ttf
+        - asset: assets/fonts/Pretendard-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Pretendard-Bold.ttf
+          weight: 700

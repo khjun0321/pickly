@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cmd-init-1758454345060",
+    "type": "init",
+    "success": true,
+    "duration": 3772.409417,
+    "timestamp": 1758454348832,
+    "metadata": {}
+  },
+  {
+    "id": "cmd-init-1758454446936",
+    "type": "init",
+    "success": true,
+    "duration": 3967.0419589999997,
+    "timestamp": 1758454450903,
+    "metadata": {}
+  },
+  {
+    "id": "cmd-init-1758454762338",
+    "type": "init",
+    "success": true,
+    "duration": 4425.5925,
+    "timestamp": 1758454766764,
+    "metadata": {}
+  }
+]
