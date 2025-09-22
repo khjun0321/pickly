@@ -1,0 +1,203 @@
+/**
+ * Button Component Styles
+ * Korean-optimized with Pickly design tokens
+ */
+
+.pickly-button {
+  /* Base styles */
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  border: 1px solid transparent;
+  border-radius: var(--border-radius-md);
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-fast) var(--easing-ease-out);
+  white-space: nowrap;
+  user-select: none;
+
+  /* Korean text optimization */
+  word-break: keep-all;
+  word-wrap: break-word;
+
+  /* Focus styles */
+  &:focus-visible {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+  }
+
+  /* Active styles */
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+/* Size variants */
+.pickly-button--xs {
+  height: var(--size-6);
+  padding: 0 var(--spacing-2);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-tight);
+}
+
+.pickly-button--sm {
+  height: var(--size-8);
+  padding: 0 var(--spacing-3);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-tight);
+}
+
+.pickly-button--md {
+  height: var(--size-10);
+  padding: 0 var(--spacing-4);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+}
+
+.pickly-button--lg {
+  height: var(--size-12);
+  padding: 0 var(--spacing-6);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+}
+
+.pickly-button--xl {
+  height: var(--size-14);
+  padding: 0 var(--spacing-8);
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-normal);
+}
+
+/* Color variants */
+.pickly-button--primary {
+  background-color: var(--color-primary-500);
+  color: var(--color-white);
+  border-color: var(--color-primary-500);
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-primary-600);
+    border-color: var(--color-primary-600);
+  }
+
+  &:active:not(:disabled) {
+    background-color: var(--color-primary-700);
+    border-color: var(--color-primary-700);
+  }
+}
+
+.pickly-button--secondary {
+  background-color: var(--color-neutral-100);
+  color: var(--color-neutral-900);
+  border-color: var(--color-neutral-200);
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-neutral-200);
+    border-color: var(--color-neutral-300);
+  }
+
+  &:active:not(:disabled) {
+    background-color: var(--color-neutral-300);
+    border-color: var(--color-neutral-400);
+  }
+}
+
+.pickly-button--outline {
+  background-color: transparent;
+  color: var(--color-primary-600);
+  border-color: var(--color-primary-500);
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-primary-50);
+    color: var(--color-primary-700);
+    border-color: var(--color-primary-600);
+  }
+
+  &:active:not(:disabled) {
+    background-color: var(--color-primary-100);
+    border-color: var(--color-primary-700);
+  }
+}
+
+.pickly-button--ghost {
+  background-color: transparent;
+  color: var(--color-neutral-700);
+  border-color: transparent;
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-neutral-100);
+    color: var(--color-neutral-900);
+  }
+
+  &:active:not(:disabled) {
+    background-color: var(--color-neutral-200);
+  }
+}
+
+.pickly-button--destructive {
+  background-color: var(--color-error-500);
+  color: var(--color-white);
+  border-color: var(--color-error-500);
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-error-600);
+    border-color: var(--color-error-600);
+  }
+
+  &:active:not(:disabled) {
+    background-color: var(--color-error-700);
+    border-color: var(--color-error-700);
+  }
+}
+
+/* States */
+.pickly-button--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.pickly-button--loading {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Loading spinner */
+.pickly-button__spinner {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pickly-button__spinner-icon {
+  width: 1em;
+  height: 1em;
+  animation: pickly-spin 1s linear infinite;
+}
+
+.pickly-button__content {
+  transition: opacity var(--transition-fast);
+}
+
+.pickly-button__content--hidden {
+  opacity: 0;
+}
+
+/* Animations */
+@keyframes pickly-spin {
+  0% {
+    transform: rotate(0deg);
+    stroke-dashoffset: 62.83;
+  }
+  50% {
+    stroke-dashoffset: 15.71;
+  }
+  100% {
+    transform: rotate(360deg);
+    stroke-dashoffset: 62.83;
+  }
+}

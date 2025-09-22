@@ -1,0 +1,135 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Introduction/Welcome" />
+
+# Pickly Design System
+
+한국 사용자를 위한 최적화된 디자인 시스템입니다.
+
+## 🎯 목표
+
+- **한국어 최적화**: 한글 타이포그래피와 사용자 경험에 최적화
+- **크로스 플랫폼**: 웹과 모바일 모두 지원
+- **개발자 친화적**: 직관적이고 일관된 API
+- **성능**: 빠른 로딩과 효율적인 번들 사이즈
+- **접근성**: 모든 사용자를 위한 접근 가능한 컴포넌트
+
+## 📦 패키지 구조
+
+### Core Packages
+
+- **design-tokens**: 디자인 토큰 (색상, 타이포그래피, 간격 등)
+- **design-foundations**: 기본 스타일과 테마
+- **assets**: 폰트, 아이콘, 이미지 에셋
+
+### UI Packages
+
+- **ui-web**: React 웹 컴포넌트
+- **ui-mobile**: Flutter 모바일 컴포넌트
+- **ui-shared**: 크로스 플랫폼 유틸리티
+
+### Documentation
+
+- **storybook**: 컴포넌트 문서화 및 테스트
+
+## 🚀 빠른 시작
+
+### 웹 프로젝트
+
+```bash
+npm install @pickly/ui-web @pickly/design-foundations
+```
+
+```jsx
+import { Button } from '@pickly/ui-web';
+import '@pickly/design-foundations/dist/css/index.css';
+
+function App() {
+  return (
+    <Button variant="primary" onPress={() => alert('안녕하세요!')}>
+      클릭하세요
+    </Button>
+  );
+}
+```
+
+### 모바일 프로젝트 (Flutter)
+
+```yaml
+dependencies:
+  pickly_ui_mobile:
+    path: packages/ui-mobile
+```
+
+```dart
+import 'package:pickly_ui_mobile/pickly_ui_mobile.dart';
+
+PicklyButton(
+  onPressed: () => print('안녕하세요!'),
+  child: Text('클릭하세요'),
+)
+```
+
+## 🎨 디자인 원칙
+
+### 1. 한국어 우선 (Korean First)
+- 한글 가독성을 위한 타이포그래피
+- 한국 사용자 패턴에 맞는 UX
+- 조사 처리 등 언어적 특성 고려
+
+### 2. 간결함 (Simplicity)
+- 복잡하지 않은 직관적인 인터페이스
+- 필수 기능에 집중
+- 깔끔하고 명확한 비주얼
+
+### 3. 일관성 (Consistency)
+- 플랫폼 간 일관된 경험
+- 예측 가능한 상호작용
+- 통일된 시각적 언어
+
+### 4. 접근성 (Accessibility)
+- 스크린 리더 지원
+- 키보드 내비게이션
+- 고대비 모드 지원
+
+## 💻 개발 가이드
+
+### 컴포넌트 제작 원칙
+
+1. **TypeScript 우선**: 모든 컴포넌트는 TypeScript로 작성
+2. **Props 검증**: 명확한 타입 정의와 기본값 제공
+3. **접근성**: ARIA 속성과 키보드 지원 필수
+4. **테스트**: 단위 테스트와 시각적 테스트 모두 제공
+5. **문서화**: Storybook과 JSDoc으로 상세 문서화
+
+### 디자인 토큰 사용
+
+```css
+/* CSS에서 */
+.my-component {
+  color: var(--color-primary-500);
+  font-family: var(--font-family-primary);
+  border-radius: var(--border-radius-md);
+}
+```
+
+```jsx
+// React에서
+import { tokens } from '@pickly/design-tokens';
+
+const MyComponent = styled.div`
+  color: ${tokens.colors.primary[500].value};
+`;
+```
+
+## 🔗 유용한 링크
+
+- [GitHub Repository](https://github.com/pickly/design-system)
+- [NPM Packages](https://www.npmjs.com/org/pickly)
+- [Design Guidelines](https://design.pickly.co.kr)
+- [API Documentation](https://docs.pickly.co.kr)
+
+---
+
+이 디자인 시스템은 지속적으로 발전하고 있습니다.
+피드백과 기여를 환영합니다! 🙌

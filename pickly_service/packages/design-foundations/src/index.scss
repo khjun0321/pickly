@@ -1,0 +1,28 @@
+/**
+ * Pickly Design Foundations - Main Entry Point
+ *
+ * 모든 기본 스타일을 통합하는 메인 파일
+ * 순서가 중요: reset → base → utilities
+ */
+
+// 1. CSS Reset - 브라우저 기본 스타일 리셋
+@import 'reset';
+
+// 2. Base Styles - 기본 HTML 요소 스타일
+@import 'base';
+
+// 3. Utility Classes - 유틸리티 클래스들
+@import 'utilities';
+
+/**
+ * Design Foundations Export
+ *
+ * 이 파일을 import하면 다음이 포함됩니다:
+ * - 모든 브라우저 기본 스타일 리셋
+ * - 한글 최적화된 기본 HTML 요소 스타일
+ * - Tailwind CSS 스타일의 유틸리티 클래스들
+ * - 디자인 토큰 기반의 일관된 스타일링
+ *
+ * Usage:
+ * @import 'pickly-design-foundations';
+ */

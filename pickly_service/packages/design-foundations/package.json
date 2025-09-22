@@ -1,0 +1,42 @@
+{
+  "name": "pickly-design-foundations",
+  "version": "1.0.0",
+  "description": "Pickly design foundations - base styles, resets, and utilities",
+  "main": "dist/index.css",
+  "style": "dist/index.css",
+  "scripts": {
+    "build": "sass src/index.scss dist/index.css --style=compressed",
+    "build:dev": "sass src/index.scss dist/index.css --style=expanded --source-map",
+    "watch": "sass src/index.scss dist/index.css --watch --style=expanded --source-map",
+    "clean": "rimraf dist"
+  },
+  "exports": {
+    ".": "./dist/index.css",
+    "./reset": "./dist/reset.css",
+    "./base": "./dist/base.css",
+    "./utilities": "./dist/utilities.css",
+    "./mixins": "./src/mixins.scss"
+  },
+  "files": [
+    "dist",
+    "src",
+    "dart"
+  ],
+  "dependencies": {
+    "pickly-design-tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "sass": "^1.69.0",
+    "rimraf": "^5.0.0"
+  },
+  "keywords": [
+    "design-foundations",
+    "design-system",
+    "pickly",
+    "css",
+    "scss",
+    "flutter"
+  ],
+  "author": "Pickly Team",
+  "license": "MIT"
+}

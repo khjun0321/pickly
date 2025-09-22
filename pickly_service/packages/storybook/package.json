@@ -1,0 +1,56 @@
+{
+  "name": "@pickly/storybook",
+  "version": "1.0.0",
+  "description": "Pickly Storybook - 컴포넌트 문서화 및 테스트 환경",
+  "private": true,
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "build": "storybook build",
+    "build-storybook": "storybook build",
+    "preview": "npx http-server storybook-static",
+    "test": "test-storybook",
+    "chromatic": "chromatic --exit-zero-on-changes",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+  },
+  "dependencies": {
+    "@pickly/design-tokens": "workspace:*",
+    "@pickly/design-foundations": "workspace:*",
+    "@pickly/assets": "workspace:*",
+    "@pickly/ui-web": "workspace:*",
+    "@pickly/ui-shared": "workspace:*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@storybook/react": "^7.1.0",
+    "@storybook/addon-essentials": "^7.1.0",
+    "@storybook/addon-interactions": "^7.1.0",
+    "@storybook/addon-links": "^7.1.0",
+    "@storybook/addon-docs": "^7.1.0",
+    "@storybook/addon-controls": "^7.1.0",
+    "@storybook/addon-viewport": "^7.1.0",
+    "@storybook/addon-backgrounds": "^7.1.0",
+    "@storybook/addon-a11y": "^7.1.0",
+    "@storybook/addon-design-tokens": "^0.2.4",
+    "@storybook/testing-library": "^0.2.0",
+    "@storybook/test-runner": "^0.11.0",
+    "@storybook/blocks": "^7.1.0",
+    "storybook": "^7.1.0",
+    "chromatic": "^6.20.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "typescript": "^5.1.0",
+    "eslint": "^8.45.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0"
+  },
+  "keywords": [
+    "storybook",
+    "components",
+    "documentation",
+    "design-system",
+    "pickly"
+  ],
+  "author": "Pickly Team",
+  "license": "MIT"
+}

@@ -1,0 +1,173 @@
+/**
+ * Card Component Styles
+ * Korean-optimized with Pickly design tokens
+ */
+
+.pickly-card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  transition: all var(--transition-fast) var(--easing-ease-out);
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+
+/* Variant styles */
+.pickly-card--default {
+  border: 1px solid var(--color-neutral-200);
+}
+
+.pickly-card--outlined {
+  border: 2px solid var(--color-neutral-300);
+}
+
+.pickly-card--elevated {
+  border: 1px solid var(--color-neutral-100);
+  box-shadow: var(--shadow-md);
+
+  &:hover {
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+.pickly-card--filled {
+  background-color: var(--color-neutral-50);
+  border: 1px solid var(--color-neutral-100);
+}
+
+/* Size variants */
+.pickly-card--sm {
+  max-width: 20rem; /* 320px */
+}
+
+.pickly-card--md {
+  max-width: 24rem; /* 384px */
+}
+
+.pickly-card--lg {
+  max-width: 32rem; /* 512px */
+}
+
+/* Padding variants */
+.pickly-card--padding-none {
+  padding: 0;
+}
+
+.pickly-card--padding-sm {
+  padding: var(--spacing-3);
+}
+
+.pickly-card--padding-md {
+  padding: var(--spacing-4);
+}
+
+.pickly-card--padding-lg {
+  padding: var(--spacing-6);
+}
+
+/* Interactive states */
+.pickly-card--interactive {
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.pickly-card--clickable {
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-neutral-25);
+    border-color: var(--color-neutral-300);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+  }
+
+  &:active {
+    background-color: var(--color-neutral-50);
+  }
+}
+
+/* Card sections */
+.pickly-card-header {
+  padding-bottom: var(--spacing-3);
+  border-bottom: 1px solid var(--color-neutral-200);
+  margin-bottom: var(--spacing-4);
+}
+
+.pickly-card-header:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.pickly-card-body {
+  flex: 1;
+}
+
+.pickly-card-footer {
+  padding-top: var(--spacing-3);
+  border-top: 1px solid var(--color-neutral-200);
+  margin-top: var(--spacing-4);
+}
+
+.pickly-card-footer:first-child {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Card with sections layout */
+.pickly-card:has(.pickly-card-header, .pickly-card-body, .pickly-card-footer) {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .pickly-card {
+    margin: 0 var(--spacing-2);
+  }
+
+  .pickly-card--sm,
+  .pickly-card--md,
+  .pickly-card--lg {
+    max-width: none;
+    width: 100%;
+  }
+
+  .pickly-card--padding-lg {
+    padding: var(--spacing-4);
+  }
+}
+
+/* Korean typography adjustments */
+.pickly-card h1,
+.pickly-card h2,
+.pickly-card h3,
+.pickly-card h4,
+.pickly-card h5,
+.pickly-card h6 {
+  line-height: var(--line-height-tight);
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+
+.pickly-card p {
+  line-height: var(--line-height-relaxed);
+  word-break: keep-all;
+  word-wrap: break-word;
+}

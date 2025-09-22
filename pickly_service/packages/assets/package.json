@@ -1,0 +1,49 @@
+{
+  "name": "pickly-assets",
+  "version": "1.0.0",
+  "description": "Pickly optimized assets - icons, images, fonts",
+  "main": "index.js",
+  "scripts": {
+    "build": "node scripts/build-assets.js",
+    "build:icons": "node scripts/generate-icons.js",
+    "build:images": "node scripts/optimize-images.js",
+    "optimize": "npm run build:images && npm run build:icons",
+    "clean": "rimraf icons/web/dist icons/mobile/dist images/web/dist images/mobile/dist",
+    "watch": "chokidar 'icons/common/**/*' 'images/common/**/*' -c 'npm run build'"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./icons/web": "./icons/web/index.js",
+    "./icons/mobile": "./icons/mobile/index.dart",
+    "./images/web": "./images/web/index.js",
+    "./images/mobile": "./images/mobile/index.dart",
+    "./fonts": "./fonts/index.css",
+    "./fonts/flutter": "./fonts/index.dart"
+  },
+  "files": [
+    "icons",
+    "images",
+    "fonts",
+    "index.js"
+  ],
+  "devDependencies": {
+    "sharp": "^0.32.0",
+    "svgo": "^3.0.0",
+    "imagemin": "^8.0.0",
+    "imagemin-pngquant": "^9.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-webp": "^7.0.0",
+    "chokidar-cli": "^3.0.0",
+    "rimraf": "^5.0.0"
+  },
+  "keywords": [
+    "assets",
+    "icons",
+    "images",
+    "fonts",
+    "design-system",
+    "pickly"
+  ],
+  "author": "Pickly Team",
+  "license": "MIT"
+}

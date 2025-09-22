@@ -1,0 +1,76 @@
+name: pickly_ui_mobile
+description: Pickly UI Mobile Components - Flutter 위젯 라이브러리
+version: 1.0.0
+publish_to: 'none'
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.10.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Design system dependencies
+  design_tokens:
+    path: ../design-tokens
+  design_foundations:
+    path: ../design-foundations
+  assets:
+    path: ../assets
+
+  # UI and animation
+  flutter_svg: ^2.0.7
+  cached_network_image: ^3.2.3
+  shimmer: ^3.0.0
+  lottie: ^2.6.0
+
+  # State management
+  flutter_riverpod: ^2.4.0
+
+  # Utilities
+  collection: ^1.17.2
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  golden_toolkit: ^0.15.0
+  mocktail: ^1.0.0
+
+flutter:
+  uses-material-design: true
+
+  # 폰트 설정
+  fonts:
+    - family: Pretendard
+      fonts:
+        - asset: assets/fonts/Pretendard/mobile/Pretendard-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Pretendard/mobile/Pretendard-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Pretendard/mobile/Pretendard-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Pretendard/mobile/Pretendard-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Pretendard/mobile/Pretendard-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Pretendard/mobile/Pretendard-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Pretendard/mobile/Pretendard-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Pretendard/mobile/Pretendard-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Pretendard/mobile/Pretendard-Black.ttf
+          weight: 900
+
+  # 아이콘 에셋
+  assets:
+    - assets/icons/1x/
+    - assets/icons/2x/
+    - assets/icons/3x/
+    - assets/images/compressed/
+    - assets/images/1x/
+    - assets/images/2x/
+    - assets/images/3x/

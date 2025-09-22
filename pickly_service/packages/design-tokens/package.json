@@ -1,0 +1,36 @@
+{
+  "name": "pickly-design-tokens",
+  "version": "1.0.0",
+  "description": "Pickly design tokens - colors, typography, spacing",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "node build-tokens.js",
+    "dev": "node build-tokens.js --watch",
+    "clean": "rimraf dist"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./json": "./dist/tokens.json",
+    "./css": "./dist/tokens.css",
+    "./scss": "./dist/tokens.scss",
+    "./dart": "./dist/tokens.dart"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "style-dictionary": "^3.8.0",
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "rimraf": "^5.0.0"
+  },
+  "keywords": [
+    "design-tokens",
+    "design-system",
+    "pickly",
+    "tokens"
+  ],
+  "author": "Pickly Team",
+  "license": "MIT"
+}

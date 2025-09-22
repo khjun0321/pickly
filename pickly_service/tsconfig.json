@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["dom", "dom.iterable", "es6"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@pickly/design-tokens": ["./packages/design-tokens/src"],
+      "@pickly/design-tokens/*": ["./packages/design-tokens/src/*"],
+      "@pickly/design-foundations": ["./packages/design-foundations/src"],
+      "@pickly/design-foundations/*": ["./packages/design-foundations/src/*"],
+      "@pickly/assets": ["./packages/assets/src"],
+      "@pickly/assets/*": ["./packages/assets/src/*"],
+      "@pickly/ui-web": ["./packages/ui-web/src"],
+      "@pickly/ui-web/*": ["./packages/ui-web/src/*"],
+      "@pickly/ui-mobile": ["./packages/ui-mobile/lib"],
+      "@pickly/ui-mobile/*": ["./packages/ui-mobile/lib/*"],
+      "@pickly/ui-shared": ["./packages/ui-shared/src"],
+      "@pickly/ui-shared/*": ["./packages/ui-shared/src/*"],
+      "@pickly/types": ["./packages/types/src"],
+      "@pickly/types/*": ["./packages/types/src/*"],
+      "@pickly/shared": ["./packages/shared/src"],
+      "@pickly/shared/*": ["./packages/shared/src/*"]
+    }
+  },
+  "include": [
+    "packages/*/src/**/*",
+    "apps/*/src/**/*",
+    "backend/*/src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/node_modules",
+    "**/dist",
+    "**/build",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.stories.tsx"
+  ]
+}

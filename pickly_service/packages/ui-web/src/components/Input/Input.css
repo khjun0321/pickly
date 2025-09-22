@@ -1,0 +1,232 @@
+/**
+ * Input Component Styles
+ * Korean-optimized with Pickly design tokens
+ */
+
+.pickly-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.pickly-input-label {
+  color: var(--color-neutral-700);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-tight);
+
+  /* Korean text optimization */
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+
+.pickly-input-required {
+  color: var(--color-error-500);
+  margin-left: var(--spacing-1);
+}
+
+.pickly-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.pickly-input {
+  width: 100%;
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--border-radius-md);
+  background-color: var(--color-white);
+  color: var(--color-neutral-900);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+  transition: all var(--transition-fast) var(--easing-ease-out);
+
+  /* Korean input optimization */
+  word-break: keep-all;
+  word-wrap: break-word;
+  ime-mode: auto;
+
+  &::placeholder {
+    color: var(--color-neutral-400);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-primary-500);
+    box-shadow: 0 0 0 3px var(--color-primary-100);
+  }
+
+  &:hover:not(:disabled):not(:focus) {
+    border-color: var(--color-neutral-400);
+  }
+
+  &:disabled {
+    background-color: var(--color-neutral-50);
+    color: var(--color-neutral-400);
+    cursor: not-allowed;
+  }
+
+  &:read-only {
+    background-color: var(--color-neutral-50);
+    cursor: default;
+  }
+}
+
+/* Size variants */
+.pickly-input-container--sm .pickly-input {
+  height: var(--size-8);
+  padding: 0 var(--spacing-3);
+  font-size: var(--font-size-xs);
+}
+
+.pickly-input-container--md .pickly-input {
+  height: var(--size-10);
+  padding: 0 var(--spacing-3);
+  font-size: var(--font-size-sm);
+}
+
+.pickly-input-container--lg .pickly-input {
+  height: var(--size-12);
+  padding: 0 var(--spacing-4);
+  font-size: var(--font-size-base);
+}
+
+/* Variant styles */
+.pickly-input-container--filled .pickly-input {
+  background-color: var(--color-neutral-100);
+  border: 1px solid transparent;
+
+  &:focus {
+    background-color: var(--color-white);
+    border-color: var(--color-primary-500);
+  }
+
+  &:hover:not(:disabled):not(:focus) {
+    background-color: var(--color-neutral-200);
+  }
+}
+
+.pickly-input-container--flushed .pickly-input {
+  border: none;
+  border-bottom: 2px solid var(--color-neutral-300);
+  border-radius: 0;
+  background-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+
+  &:focus {
+    border-bottom-color: var(--color-primary-500);
+    box-shadow: none;
+  }
+
+  &:hover:not(:disabled):not(:focus) {
+    border-bottom-color: var(--color-neutral-400);
+  }
+}
+
+/* State styles */
+.pickly-input-container--error .pickly-input {
+  border-color: var(--color-error-500);
+
+  &:focus {
+    border-color: var(--color-error-500);
+    box-shadow: 0 0 0 3px var(--color-error-100);
+  }
+}
+
+.pickly-input-container--success .pickly-input {
+  border-color: var(--color-success-500);
+
+  &:focus {
+    border-color: var(--color-success-500);
+    box-shadow: 0 0 0 3px var(--color-success-100);
+  }
+}
+
+/* Icon styles */
+.pickly-input-icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-neutral-400);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.pickly-input-icon--left {
+  left: var(--spacing-3);
+}
+
+.pickly-input-icon--right {
+  right: var(--spacing-3);
+}
+
+.pickly-input--with-left-icon {
+  padding-left: calc(var(--spacing-3) + 1.5rem + var(--spacing-2)) !important;
+}
+
+.pickly-input--with-right-icon {
+  padding-right: calc(var(--spacing-3) + 1.5rem + var(--spacing-2)) !important;
+}
+
+/* Size-specific icon adjustments */
+.pickly-input-container--sm .pickly-input-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.pickly-input-container--sm .pickly-input--with-left-icon {
+  padding-left: calc(var(--spacing-3) + 1rem + var(--spacing-2)) !important;
+}
+
+.pickly-input-container--sm .pickly-input--with-right-icon {
+  padding-right: calc(var(--spacing-3) + 1rem + var(--spacing-2)) !important;
+}
+
+.pickly-input-container--lg .pickly-input-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.pickly-input-container--lg .pickly-input--with-left-icon {
+  padding-left: calc(var(--spacing-4) + 1.25rem + var(--spacing-2)) !important;
+}
+
+.pickly-input-container--lg .pickly-input--with-right-icon {
+  padding-right: calc(var(--spacing-4) + 1.25rem + var(--spacing-2)) !important;
+}
+
+/* Description and error text */
+.pickly-input-description {
+  min-height: 1.25rem;
+}
+
+.pickly-input-help {
+  color: var(--color-neutral-600);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-tight);
+}
+
+.pickly-input-error {
+  color: var(--color-error-600);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-tight);
+}
+
+/* Disabled state */
+.pickly-input-container--disabled .pickly-input-label {
+  color: var(--color-neutral-400);
+}
+
+.pickly-input-container--disabled .pickly-input-icon {
+  color: var(--color-neutral-300);
+}
+
+/* Read-only state */
+.pickly-input-container--readonly .pickly-input-label {
+  color: var(--color-neutral-600);
+}

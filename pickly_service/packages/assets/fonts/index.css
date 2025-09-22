@@ -1,0 +1,128 @@
+/**
+ * Pickly Assets - Web Font Declarations
+ *
+ * 웹에서 사용할 폰트 선언
+ * Pretendard Variable 폰트 포함
+ */
+
+/* Pretendard Variable Font */
+@font-face {
+  font-family: 'Pretendard Variable';
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: url('./Pretendard/web/PretendardVariable.woff2') format('woff2-variations');
+}
+
+/* Pretendard Static Fonts (폴백) */
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+  src: url('./Pretendard/web/Pretendard-Thin.woff2') format('woff2'),
+       url('./Pretendard/web/Pretendard-Thin.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+  src: url('./Pretendard/web/Pretendard-ExtraLight.woff2') format('woff2'),
+       url('./Pretendard/web/Pretendard-ExtraLight.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url('./Pretendard/web/Pretendard-Light.woff2') format('woff2'),
+       url('./Pretendard/web/Pretendard-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('./Pretendard/web/Pretendard-Regular.woff2') format('woff2'),
+       url('./Pretendard/web/Pretendard-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url('./Pretendard/web/Pretendard-Medium.woff2') format('woff2'),
+       url('./Pretendard/web/Pretendard-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url('./Pretendard/web/Pretendard-SemiBold.woff2') format('woff2'),
+       url('./Pretendard/web/Pretendard-SemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('./Pretendard/web/Pretendard-Bold.woff2') format('woff2'),
+       url('./Pretendard/web/Pretendard-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url('./Pretendard/web/Pretendard-ExtraBold.woff2') format('woff2'),
+       url('./Pretendard/web/Pretendard-ExtraBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+  src: url('./Pretendard/web/Pretendard-Black.woff2') format('woff2'),
+       url('./Pretendard/web/Pretendard-Black.woff') format('woff');
+}
+
+/* Font preload hints for critical fonts */
+/*
+Add these to your HTML <head> for better performance:
+
+<link rel="preload" href="/assets/fonts/Pretendard/web/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/Pretendard/web/Pretendard-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/Pretendard/web/Pretendard-Medium.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/Pretendard/web/Pretendard-Bold.woff2" as="font" type="font/woff2" crossorigin>
+*/
+
+/* Font feature settings for Korean optimization */
+.pickly-text {
+  font-feature-settings: 'kern' 1, 'liga' 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Font size adjustments for different languages */
+:lang(ko) {
+  /* 한글 최적화 */
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+
+:lang(en) {
+  /* 영문 최적화 */
+  word-break: normal;
+  hyphens: auto;
+}

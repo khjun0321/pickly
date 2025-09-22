@@ -1,0 +1,295 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+
+<Meta title="Design System/Design Tokens" />
+
+# Design Tokens
+
+Pickly 디자인 시스템의 핵심이 되는 디자인 토큰들입니다.
+
+## Colors
+
+### Primary Colors
+
+우리의 메인 브랜드 컬러입니다. 녹색 계열로 신선함과 성장을 표현합니다.
+
+<ColorPalette>
+  <ColorItem
+    title="Primary 50"
+    subtitle="가장 밝은 주색상"
+    colors={{ Primary50: '#f0fdf4' }}
+  />
+  <ColorItem
+    title="Primary 100"
+    subtitle="매우 밝은 주색상"
+    colors={{ Primary100: '#dcfce7' }}
+  />
+  <ColorItem
+    title="Primary 200"
+    subtitle="밝은 주색상"
+    colors={{ Primary200: '#bbf7d0' }}
+  />
+  <ColorItem
+    title="Primary 300"
+    subtitle="연한 주색상"
+    colors={{ Primary300: '#86efac' }}
+  />
+  <ColorItem
+    title="Primary 400"
+    subtitle="중간 밝은 주색상"
+    colors={{ Primary400: '#4ade80' }}
+  />
+  <ColorItem
+    title="Primary 500"
+    subtitle="기본 주색상 (브랜드 메인)"
+    colors={{ Primary500: '#22c55e' }}
+  />
+  <ColorItem
+    title="Primary 600"
+    subtitle="중간 어두운 주색상"
+    colors={{ Primary600: '#16a34a' }}
+  />
+  <ColorItem
+    title="Primary 700"
+    subtitle="어두운 주색상"
+    colors={{ Primary700: '#15803d' }}
+  />
+  <ColorItem
+    title="Primary 800"
+    subtitle="매우 어두운 주색상"
+    colors={{ Primary800: '#166534' }}
+  />
+  <ColorItem
+    title="Primary 900"
+    subtitle="가장 어두운 주색상"
+    colors={{ Primary900: '#14532d' }}
+  />
+</ColorPalette>
+
+### Neutral Colors
+
+텍스트, 배경, 테두리 등에 사용되는 무채색 팔레트입니다.
+
+<ColorPalette>
+  <ColorItem
+    title="White"
+    subtitle="순백색"
+    colors={{ White: '#ffffff' }}
+  />
+  <ColorItem
+    title="Neutral 25"
+    subtitle="거의 흰색"
+    colors={{ Neutral25: '#fcfcfd' }}
+  />
+  <ColorItem
+    title="Neutral 50"
+    subtitle="매우 밝은 회색"
+    colors={{ Neutral50: '#f9fafb' }}
+  />
+  <ColorItem
+    title="Neutral 100"
+    subtitle="밝은 회색"
+    colors={{ Neutral100: '#f2f4f7' }}
+  />
+  <ColorItem
+    title="Neutral 200"
+    subtitle="연한 회색"
+    colors={{ Neutral200: '#e4e7ec' }}
+  />
+  <ColorItem
+    title="Neutral 300"
+    subtitle="중간 밝은 회색"
+    colors={{ Neutral300: '#d0d5dd' }}
+  />
+  <ColorItem
+    title="Neutral 400"
+    subtitle="중간 회색"
+    colors={{ Neutral400: '#98a2b3' }}
+  />
+  <ColorItem
+    title="Neutral 500"
+    subtitle="기본 회색"
+    colors={{ Neutral500: '#667085' }}
+  />
+  <ColorItem
+    title="Neutral 600"
+    subtitle="중간 어두운 회색"
+    colors={{ Neutral600: '#475467' }}
+  />
+  <ColorItem
+    title="Neutral 700"
+    subtitle="어두운 회색"
+    colors={{ Neutral700: '#344054' }}
+  />
+  <ColorItem
+    title="Neutral 800"
+    subtitle="매우 어두운 회색"
+    colors={{ Neutral800: '#1d2939' }}
+  />
+  <ColorItem
+    title="Neutral 900"
+    subtitle="거의 검은색"
+    colors={{ Neutral900: '#101828' }}
+  />
+  <ColorItem
+    title="Black"
+    subtitle="순검은색"
+    colors={{ Black: '#000000' }}
+  />
+</ColorPalette>
+
+### Semantic Colors
+
+상태를 나타내는 의미론적 색상들입니다.
+
+<ColorPalette>
+  <ColorItem
+    title="Success"
+    subtitle="성공 상태"
+    colors={{
+      Success100: '#d1fae5',
+      Success500: '#10b981',
+      Success700: '#047857'
+    }}
+  />
+  <ColorItem
+    title="Warning"
+    subtitle="경고 상태"
+    colors={{
+      Warning100: '#fef3c7',
+      Warning500: '#f59e0b',
+      Warning700: '#b45309'
+    }}
+  />
+  <ColorItem
+    title="Error"
+    subtitle="오류 상태"
+    colors={{
+      Error100: '#fee2e2',
+      Error500: '#ef4444',
+      Error700: '#b91c1c'
+    }}
+  />
+  <ColorItem
+    title="Info"
+    subtitle="정보 상태"
+    colors={{
+      Info100: '#dbeafe',
+      Info500: '#3b82f6',
+      Info700: '#1d4ed8'
+    }}
+  />
+</ColorPalette>
+
+## Typography
+
+### Font Families
+
+- **Primary**: Pretendard Variable, Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif
+- **Mono**: SF Mono, Monaco, Inconsolata, Roboto Mono, monospace
+
+### Font Sizes
+
+| Token | Size | Usage |
+|-------|------|-------|
+| `--font-size-xs` | 12px | 작은 보조 텍스트 |
+| `--font-size-sm` | 14px | 일반 텍스트, 버튼 |
+| `--font-size-base` | 16px | 기본 본문 텍스트 |
+| `--font-size-lg` | 18px | 큰 본문 텍스트 |
+| `--font-size-xl` | 20px | 작은 제목 |
+| `--font-size-2xl` | 24px | 중간 제목 |
+| `--font-size-3xl` | 30px | 큰 제목 |
+| `--font-size-4xl` | 36px | 매우 큰 제목 |
+
+### Font Weights
+
+| Token | Weight | Usage |
+|-------|--------|-------|
+| `--font-weight-light` | 300 | 가벼운 텍스트 |
+| `--font-weight-normal` | 400 | 일반 텍스트 |
+| `--font-weight-medium` | 500 | 중간 강조 |
+| `--font-weight-semibold` | 600 | 강조 텍스트 |
+| `--font-weight-bold` | 700 | 볼드 텍스트 |
+
+### Line Heights
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--line-height-tight` | 1.25 | 제목용 |
+| `--line-height-normal` | 1.5 | 일반 텍스트 |
+| `--line-height-relaxed` | 1.75 | 긴 글 읽기용 |
+
+## Spacing
+
+8px 기반의 간격 시스템을 사용합니다.
+
+| Token | Size | Usage |
+|-------|------|-------|
+| `--spacing-1` | 4px | 아주 작은 간격 |
+| `--spacing-2` | 8px | 작은 간격 |
+| `--spacing-3` | 12px | 기본 간격 |
+| `--spacing-4` | 16px | 일반 간격 |
+| `--spacing-5` | 20px | 중간 간격 |
+| `--spacing-6` | 24px | 큰 간격 |
+| `--spacing-8` | 32px | 더 큰 간격 |
+| `--spacing-10` | 40px | 매우 큰 간격 |
+| `--spacing-12` | 48px | 섹션 간격 |
+| `--spacing-16` | 64px | 큰 섹션 간격 |
+| `--spacing-20` | 80px | 매우 큰 섹션 간격 |
+
+## Border Radius
+
+| Token | Size | Usage |
+|-------|------|-------|
+| `--border-radius-none` | 0px | 각진 모서리 |
+| `--border-radius-sm` | 2px | 아주 작은 둥글기 |
+| `--border-radius-base` | 4px | 기본 둥글기 |
+| `--border-radius-md` | 6px | 중간 둥글기 |
+| `--border-radius-lg` | 8px | 큰 둥글기 |
+| `--border-radius-xl` | 12px | 매우 큰 둥글기 |
+| `--border-radius-2xl` | 16px | 아주 큰 둥글기 |
+| `--border-radius-full` | 50% | 완전 원형 |
+
+## Shadows
+
+| Token | Shadow | Usage |
+|-------|--------|-------|
+| `--shadow-xs` | 0 1px 2px rgba(16, 24, 40, 0.05) | 아주 작은 그림자 |
+| `--shadow-sm` | 0 1px 3px rgba(16, 24, 40, 0.1) | 작은 그림자 |
+| `--shadow-md` | 0 4px 8px rgba(16, 24, 40, 0.1) | 중간 그림자 |
+| `--shadow-lg` | 0 12px 16px rgba(16, 24, 40, 0.1) | 큰 그림자 |
+| `--shadow-xl` | 0 20px 24px rgba(16, 24, 40, 0.1) | 매우 큰 그림자 |
+| `--shadow-2xl` | 0 24px 48px rgba(16, 24, 40, 0.18) | 아주 큰 그림자 |
+
+## 사용 예시
+
+### CSS에서 사용
+
+```css
+.my-button {
+  background-color: var(--color-primary-500);
+  color: var(--color-white);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+}
+```
+
+### JavaScript/TypeScript에서 사용
+
+```javascript
+import { tokens } from '@pickly/design-tokens';
+
+const buttonStyles = {
+  backgroundColor: tokens.colors.primary[500].value,
+  color: tokens.colors.white.value,
+  fontFamily: tokens.typography.fontFamily.primary.value,
+  fontSize: tokens.typography.fontSize.sm.value,
+  fontWeight: tokens.typography.fontWeight.medium.value,
+  padding: `${tokens.spacing[3].value} ${tokens.spacing[4].value}`,
+  borderRadius: tokens.borderRadius.md.value,
+  boxShadow: tokens.shadows.sm.value,
+};
+```

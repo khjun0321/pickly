@@ -123,20 +123,139 @@
 
 ## 8. 프로젝트 구조 (Project Architecture)
 
+### 📁 완전 재설계된 디자인 시스템 구조
+
 ```
-Pickly/
-├── pickly-service/                    # 📦 메인 모노레포
-│   ├── apps/                         # 🚀 프론트엔드 애플리케이션
-│   │   ├── mobile/                   # 📱 Flutter 모바일 앱
-│   │   ├── web/                      # 🌐 React 웹 애플리케이션
-│   │   └── admin/                    # 👩‍💼 관리자 대시보드
-│   ├── backend/                      # ⚙️ 백엔드 (Supabase 사용)
-│   ├── packages/                     # 📦 공유 패키지
-│   ├── docs/                         # 📚 프로젝트 문서
-│   ├── shared/                       # 🔗 전역 설정
-│   ├── infra/                        # ☁️ 인프라스트럭처
-│   └── ops/                          # 🛠️ 운영 도구
+pickly_service/
+├── apps/
+│   ├── mobile/                     # 📱 Flutter 앱
+│   │   ├── lib/
+│   │   ├── assets/ → 심볼릭 링크    # packages/assets 참조
+│   │   └── pubspec.yaml            # 모바일 전용 패키지만 의존
+│   │
+│   ├── web/                        # 🌐 React 앱
+│   │   ├── src/
+│   │   ├── public/ → 심볼릭 링크    # packages/assets 참조
+│   │   └── package.json            # 웹 전용 패키지만 의존
+│   │
+│   └── admin/                      # 👩‍💼 관리자 대시보드
+│       ├── src/
+│       └── package.json
+│
+├── backend/                        # ⚙️ 백엔드 (Supabase 사용)
+│   └── api/
+│
+└── packages/
+    ├── design-tokens/              # 🎯 핵심 디자인 토큰
+    │   ├── src/
+    │   │   ├── colors.ts
+    │   │   ├── typography.ts
+    │   │   ├── spacing.ts
+    │   │   ├── shadows.ts
+    │   │   ├── borders.ts
+    │   │   ├── animations.ts
+    │   │   └── index.ts
+    │   ├── dist/                   # 빌드된 결과물
+    │   │   ├── tokens.json         # 범용 JSON
+    │   │   ├── tokens.scss         # Sass 변수
+    │   │   ├── tokens.css          # CSS 커스텀 속성
+    │   │   └── tokens.dart         # Dart 상수
+    │   ├── build-tokens.js         # 빌드 스크립트
+    │   └── package.json
+    │
+    ├── design-foundations/         # 🏗️ 기본 스타일 & 유틸리티
+    │   ├── src/
+    │   │   ├── reset.scss          # CSS 리셋
+    │   │   ├── base.scss           # 기본 스타일
+    │   │   ├── utilities.scss      # 유틸리티 클래스
+    │   │   ├── mixins.scss         # Sass 믹스인
+    │   │   └── index.scss
+    │   ├── dart/
+    │   │   ├── theme_data.dart     # Flutter 테마
+    │   │   ├── text_styles.dart    # 텍스트 스타일
+    │   │   └── index.dart
+    │   └── package.json
+    │
+    ├── assets/                     # 📁 플랫폼별 최적화된 리소스
+    │   ├── icons/
+    │   │   ├── common/            # 공통 SVG 원본
+    │   │   ├── web/               # 웹 최적화 (SVG 스프라이트, CSS)
+    │   │   └── mobile/            # 모바일 최적화 (1x, 2x, 3x)
+    │   ├── images/
+    │   │   ├── common/            # 공통 원본
+    │   │   ├── web/               # WebP, PNG, 썸네일
+    │   │   └── mobile/            # 압축된 이미지, 멀티 해상도
+    │   ├── fonts/
+    │   │   ├── Pretendard/
+    │   │   │   ├── web/           # WOFF2, WOFF
+    │   │   │   └── mobile/        # TTF, OTF
+    │   │   ├── index.css          # 웹용 폰트 선언
+    │   │   └── index.dart         # 플러터용 폰트 설정
+    │   └── scripts/               # 에셋 최적화 스크립트
+    │
+    ├── ui-web/                    # 🌐 웹 전용 컴포넌트
+    │   ├── src/
+    │   │   ├── components/        # Button, Card, Input, Modal 등
+    │   │   ├── hooks/             # useTheme, useMediaQuery 등
+    │   │   └── providers/         # ThemeProvider 등
+    │   └── styles/                # 웹 전용 스타일
+    │
+    ├── ui-mobile/                 # 📱 모바일 전용 위젯
+    │   ├── lib/
+    │   │   ├── widgets/           # 버튼, 카드, 입력, 네비게이션 등
+    │   │   ├── themes/            # Flutter 테마
+    │   │   └── utils/             # 모바일 전용 유틸
+    │   └── pubspec.yaml
+    │
+    ├── ui-shared/                 # 🤝 공통 로직
+    │   ├── src/
+    │   │   ├── types/             # 타입 정의
+    │   │   ├── constants/         # 상수
+    │   │   └── utils/             # 유틸리티
+    │   └── package.json
+    │
+    └── storybook/                 # 📚 컴포넌트 문서화
+        ├── .storybook/
+        ├── stories/
+        │   ├── tokens/
+        │   ├── web-components/
+        │   └── guidelines/
+        └── package.json
 ```
+
+### 🔗 패키지간 의존성 관계
+
+```mermaid
+graph TD
+    A[design-tokens] --> B[design-foundations]
+    A --> C[ui-shared]
+    B --> D[ui-web]
+    B --> E[ui-mobile]
+    C --> D
+    C --> E
+    F[assets] --> D
+    F --> E
+    G[apps/web] --> D
+    G --> F
+    H[apps/mobile] --> E
+    H --> F
+```
+
+### 🎯 디자인 시스템 아키텍처의 장점
+
+1. **명확한 관심사 분리**: 토큰, 에셋, 컴포넌트가 각각 독립적
+2. **플랫폼별 최적화**: 웹과 모바일에 최적화된 리소스
+3. **독립적 개발**: 각 패키지가 독립적으로 개발/배포 가능
+4. **성능 최적화**: 필요한 것만 번들링, 트리 셰이킹 지원
+5. **확장성**: 새로운 플랫폼 추가 시 쉽게 확장
+6. **개발 경험**: 명확한 구조로 개발 효율성 향상
+
+### 📦 예상 성능 개선 효과
+
+- **웹 번들**: 2.3MB → 1.1MB (-52%)
+- **모바일 APK**: 15MB → 8MB (-47%)
+- **빌드 시간**: 5분 → 1분 (-80%)
+- **개발 속도**: 플랫폼별 최적화로 개발 효율성 대폭 향상
 
 ---
 

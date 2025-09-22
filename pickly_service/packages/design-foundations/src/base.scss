@@ -1,0 +1,292 @@
+/**
+ * Pickly Design Foundations - Base Styles
+ *
+ * 기본적인 HTML 요소들의 스타일 정의
+ * 한글 타이포그래피에 최적화
+ */
+
+@import 'pickly-design-tokens/dist/tokens.scss';
+
+/* Root variables */
+:root {
+  /* Typography */
+  --font-family-primary: #{$pickly-typography-fontFamily-primary};
+  --font-family-mono: #{$pickly-typography-fontFamily-mono};
+
+  /* Colors */
+  --color-text-primary: #{$pickly-text-primary};
+  --color-text-secondary: #{$pickly-text-secondary};
+  --color-text-tertiary: #{$pickly-text-tertiary};
+  --color-background-primary: #{$pickly-background-primary};
+  --color-background-secondary: #{$pickly-background-secondary};
+
+  /* Spacing */
+  --space-xs: #{$pickly-spacing-semantic-xs};
+  --space-sm: #{$pickly-spacing-semantic-sm};
+  --space-md: #{$pickly-spacing-semantic-md};
+  --space-lg: #{$pickly-spacing-semantic-lg};
+  --space-xl: #{$pickly-spacing-semantic-xl};
+}
+
+/* Body styles */
+body {
+  font-family: var(--font-family-primary);
+  font-size: $pickly-typography-fontSize-base;
+  font-weight: $pickly-typography-fontWeight-regular;
+  line-height: $pickly-typography-lineHeight-normal;
+  color: var(--color-text-primary);
+  background-color: var(--color-background-primary);
+
+  /* 한글 최적화 */
+  word-break: keep-all;
+  word-wrap: break-word;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Heading styles */
+h1 {
+  font-size: $pickly-typography-textStyles-heading1-fontSize;
+  font-weight: $pickly-typography-textStyles-heading1-fontWeight;
+  line-height: $pickly-typography-textStyles-heading1-lineHeight;
+  letter-spacing: $pickly-typography-textStyles-heading1-letterSpacing;
+  margin-bottom: var(--space-md);
+}
+
+h2 {
+  font-size: $pickly-typography-textStyles-heading2-fontSize;
+  font-weight: $pickly-typography-textStyles-heading2-fontWeight;
+  line-height: $pickly-typography-textStyles-heading2-lineHeight;
+  letter-spacing: $pickly-typography-textStyles-heading2-letterSpacing;
+  margin-bottom: var(--space-md);
+}
+
+h3 {
+  font-size: $pickly-typography-textStyles-heading3-fontSize;
+  font-weight: $pickly-typography-textStyles-heading3-fontWeight;
+  line-height: $pickly-typography-textStyles-heading3-lineHeight;
+  letter-spacing: $pickly-typography-textStyles-heading3-letterSpacing;
+  margin-bottom: var(--space-sm);
+}
+
+h4 {
+  font-size: $pickly-typography-textStyles-heading4-fontSize;
+  font-weight: $pickly-typography-textStyles-heading4-fontWeight;
+  line-height: $pickly-typography-textStyles-heading4-lineHeight;
+  letter-spacing: $pickly-typography-textStyles-heading4-letterSpacing;
+  margin-bottom: var(--space-sm);
+}
+
+/* Body text */
+p {
+  font-size: $pickly-typography-textStyles-body-fontSize;
+  font-weight: $pickly-typography-textStyles-body-fontWeight;
+  line-height: $pickly-typography-textStyles-body-lineHeight;
+  letter-spacing: $pickly-typography-textStyles-body-letterSpacing;
+  margin-bottom: var(--space-sm);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Large body text */
+.text-large {
+  font-size: $pickly-typography-textStyles-bodyLarge-fontSize;
+  font-weight: $pickly-typography-textStyles-bodyLarge-fontWeight;
+  line-height: $pickly-typography-textStyles-bodyLarge-lineHeight;
+  letter-spacing: $pickly-typography-textStyles-bodyLarge-letterSpacing;
+}
+
+/* Small body text */
+.text-small {
+  font-size: $pickly-typography-textStyles-bodySmall-fontSize;
+  font-weight: $pickly-typography-textStyles-bodySmall-fontWeight;
+  line-height: $pickly-typography-textStyles-bodySmall-lineHeight;
+  letter-spacing: $pickly-typography-textStyles-bodySmall-letterSpacing;
+}
+
+/* Caption text */
+.text-caption {
+  font-size: $pickly-typography-textStyles-caption-fontSize;
+  font-weight: $pickly-typography-textStyles-caption-fontWeight;
+  line-height: $pickly-typography-textStyles-caption-lineHeight;
+  letter-spacing: $pickly-typography-textStyles-caption-letterSpacing;
+  color: var(--color-text-secondary);
+}
+
+/* Link styles */
+a {
+  color: $pickly-text-link;
+  text-decoration: none;
+  transition: $pickly-animations-transition-colors;
+
+  &:hover {
+    color: $pickly-text-linkHover;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: 2px solid $pickly-border-focus;
+    outline-offset: 2px;
+    border-radius: $pickly-borders-radius-xs;
+  }
+}
+
+/* List styles */
+ul, ol {
+  padding-left: var(--space-md);
+  margin-bottom: var(--space-sm);
+
+  li {
+    margin-bottom: var(--space-xs);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+ul {
+  list-style-type: disc;
+
+  ul {
+    list-style-type: circle;
+
+    ul {
+      list-style-type: square;
+    }
+  }
+}
+
+ol {
+  list-style-type: decimal;
+
+  ol {
+    list-style-type: lower-alpha;
+
+    ol {
+      list-style-type: lower-roman;
+    }
+  }
+}
+
+/* Code styles */
+code {
+  font-family: var(--font-family-mono);
+  font-size: $pickly-typography-textStyles-code-fontSize;
+  font-weight: $pickly-typography-textStyles-code-fontWeight;
+  line-height: $pickly-typography-textStyles-code-lineHeight;
+  background-color: $pickly-neutral-100;
+  color: $pickly-neutral-800;
+  padding: 2px 4px;
+  border-radius: $pickly-borders-radius-xs;
+}
+
+pre {
+  font-family: var(--font-family-mono);
+  font-size: $pickly-typography-textStyles-codeBlock-fontSize;
+  font-weight: $pickly-typography-textStyles-codeBlock-fontWeight;
+  line-height: $pickly-typography-textStyles-codeBlock-lineHeight;
+  background-color: $pickly-neutral-900;
+  color: $pickly-neutral-100;
+  padding: var(--space-md);
+  border-radius: $pickly-borders-radius-md;
+  overflow-x: auto;
+  margin-bottom: var(--space-sm);
+
+  code {
+    background: none;
+    color: inherit;
+    padding: 0;
+  }
+}
+
+/* Blockquote styles */
+blockquote {
+  border-left: 4px solid $pickly-primary-500;
+  padding-left: var(--space-md);
+  margin: var(--space-md) 0;
+  font-style: italic;
+  color: var(--color-text-secondary);
+}
+
+/* Horizontal rule */
+hr {
+  border: none;
+  border-top: 1px solid $pickly-border-primary;
+  margin: var(--space-lg) 0;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--space-md);
+}
+
+th, td {
+  padding: var(--space-sm);
+  text-align: left;
+  border-bottom: 1px solid $pickly-border-primary;
+}
+
+th {
+  font-weight: $pickly-typography-fontWeight-semiBold;
+  background-color: var(--color-background-secondary);
+}
+
+/* Focus styles */
+:focus {
+  outline: 2px solid $pickly-border-focus;
+  outline-offset: 2px;
+}
+
+/* Selection styles */
+::selection {
+  background-color: $pickly-primary-100;
+  color: $pickly-primary-900;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: $pickly-neutral-300;
+  border-radius: $pickly-borders-radius-full;
+
+  &:hover {
+    background: $pickly-neutral-400;
+  }
+}
+
+/* Dark mode support (if implemented) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text-primary: #{$pickly-neutral-100};
+    --color-text-secondary: #{$pickly-neutral-300};
+    --color-text-tertiary: #{$pickly-neutral-500};
+    --color-background-primary: #{$pickly-neutral-900};
+    --color-background-secondary: #{$pickly-neutral-800};
+  }
+
+  code {
+    background-color: $pickly-neutral-800;
+    color: $pickly-neutral-200;
+  }
+
+  th {
+    background-color: $pickly-neutral-800;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $pickly-neutral-800;
+  }
+}

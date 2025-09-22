@@ -1,0 +1,370 @@
+/**
+ * Pickly Design Foundations - Sass Mixins
+ *
+ * 재사용 가능한 Sass 믹스인들
+ * 컴포넌트 개발에 유용한 헬퍼 함수들
+ */
+
+@import 'pickly-design-tokens/dist/tokens.scss';
+
+/* Typography Mixins */
+@mixin text-style($style-name) {
+  @if $style-name == 'display-hero' {
+    font-size: $pickly-typography-textStyles-displayHero-fontSize;
+    font-weight: $pickly-typography-textStyles-displayHero-fontWeight;
+    line-height: $pickly-typography-textStyles-displayHero-lineHeight;
+    letter-spacing: $pickly-typography-textStyles-displayHero-letterSpacing;
+  } @else if $style-name == 'display-large' {
+    font-size: $pickly-typography-textStyles-displayLarge-fontSize;
+    font-weight: $pickly-typography-textStyles-displayLarge-fontWeight;
+    line-height: $pickly-typography-textStyles-displayLarge-lineHeight;
+    letter-spacing: $pickly-typography-textStyles-displayLarge-letterSpacing;
+  } @else if $style-name == 'heading1' {
+    font-size: $pickly-typography-textStyles-heading1-fontSize;
+    font-weight: $pickly-typography-textStyles-heading1-fontWeight;
+    line-height: $pickly-typography-textStyles-heading1-lineHeight;
+    letter-spacing: $pickly-typography-textStyles-heading1-letterSpacing;
+  } @else if $style-name == 'heading2' {
+    font-size: $pickly-typography-textStyles-heading2-fontSize;
+    font-weight: $pickly-typography-textStyles-heading2-fontWeight;
+    line-height: $pickly-typography-textStyles-heading2-lineHeight;
+    letter-spacing: $pickly-typography-textStyles-heading2-letterSpacing;
+  } @else if $style-name == 'heading3' {
+    font-size: $pickly-typography-textStyles-heading3-fontSize;
+    font-weight: $pickly-typography-textStyles-heading3-fontWeight;
+    line-height: $pickly-typography-textStyles-heading3-lineHeight;
+    letter-spacing: $pickly-typography-textStyles-heading3-letterSpacing;
+  } @else if $style-name == 'heading4' {
+    font-size: $pickly-typography-textStyles-heading4-fontSize;
+    font-weight: $pickly-typography-textStyles-heading4-fontWeight;
+    line-height: $pickly-typography-textStyles-heading4-lineHeight;
+    letter-spacing: $pickly-typography-textStyles-heading4-letterSpacing;
+  } @else if $style-name == 'body' {
+    font-size: $pickly-typography-textStyles-body-fontSize;
+    font-weight: $pickly-typography-textStyles-body-fontWeight;
+    line-height: $pickly-typography-textStyles-body-lineHeight;
+    letter-spacing: $pickly-typography-textStyles-body-letterSpacing;
+  } @else if $style-name == 'body-large' {
+    font-size: $pickly-typography-textStyles-bodyLarge-fontSize;
+    font-weight: $pickly-typography-textStyles-bodyLarge-fontWeight;
+    line-height: $pickly-typography-textStyles-bodyLarge-lineHeight;
+    letter-spacing: $pickly-typography-textStyles-bodyLarge-letterSpacing;
+  } @else if $style-name == 'body-small' {
+    font-size: $pickly-typography-textStyles-bodySmall-fontSize;
+    font-weight: $pickly-typography-textStyles-bodySmall-fontWeight;
+    line-height: $pickly-typography-textStyles-bodySmall-lineHeight;
+    letter-spacing: $pickly-typography-textStyles-bodySmall-letterSpacing;
+  } @else if $style-name == 'button' {
+    font-size: $pickly-typography-textStyles-button-fontSize;
+    font-weight: $pickly-typography-textStyles-button-fontWeight;
+    line-height: $pickly-typography-textStyles-button-lineHeight;
+    letter-spacing: $pickly-typography-textStyles-button-letterSpacing;
+  } @else if $style-name == 'button-small' {
+    font-size: $pickly-typography-textStyles-buttonSmall-fontSize;
+    font-weight: $pickly-typography-textStyles-buttonSmall-fontWeight;
+    line-height: $pickly-typography-textStyles-buttonSmall-lineHeight;
+    letter-spacing: $pickly-typography-textStyles-buttonSmall-letterSpacing;
+  } @else if $style-name == 'caption' {
+    font-size: $pickly-typography-textStyles-caption-fontSize;
+    font-weight: $pickly-typography-textStyles-caption-fontWeight;
+    line-height: $pickly-typography-textStyles-caption-lineHeight;
+    letter-spacing: $pickly-typography-textStyles-caption-letterSpacing;
+  } @else if $style-name == 'label' {
+    font-size: $pickly-typography-textStyles-label-fontSize;
+    font-weight: $pickly-typography-textStyles-label-fontWeight;
+    line-height: $pickly-typography-textStyles-label-lineHeight;
+    letter-spacing: $pickly-typography-textStyles-label-letterSpacing;
+  }
+}
+
+/* Responsive Typography */
+@mixin responsive-text($mobile-size, $desktop-size) {
+  font-size: $mobile-size;
+
+  @media (min-width: 768px) {
+    font-size: $desktop-size;
+  }
+}
+
+/* Truncate Text */
+@mixin truncate($lines: 1) {
+  @if $lines == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* Visually Hidden (for accessibility) */
+@mixin visually-hidden() {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus Styles */
+@mixin focus-ring($color: $pickly-border-focus, $width: 2px, $offset: 2px) {
+  outline: $width solid $color;
+  outline-offset: $offset;
+}
+
+@mixin focus-visible() {
+  &:focus-visible {
+    @include focus-ring();
+  }
+}
+
+/* Button Mixins */
+@mixin button-base() {
+  @include text-style('button');
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: $pickly-animations-transition-button;
+  border-radius: $pickly-borders-component-button;
+  padding: $pickly-spacing-semantic-buttonPadding;
+  min-height: $pickly-sizes-component-buttonHeight;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  @include focus-visible();
+}
+
+@mixin button-variant($bg-color, $text-color, $hover-bg: null, $hover-text: null) {
+  background-color: $bg-color;
+  color: $text-color;
+
+  @if $hover-bg {
+    &:hover:not(:disabled) {
+      background-color: $hover-bg;
+
+      @if $hover-text {
+        color: $hover-text;
+      }
+    }
+  }
+}
+
+@mixin button-size($padding, $height, $font-size) {
+  padding: $padding;
+  min-height: $height;
+  font-size: $font-size;
+}
+
+/* Input Mixins */
+@mixin input-base() {
+  @include text-style('body');
+  display: block;
+  width: 100%;
+  border: 1px solid $pickly-border-primary;
+  border-radius: $pickly-borders-component-input;
+  padding: $pickly-spacing-semantic-inputPadding;
+  min-height: $pickly-sizes-component-inputHeight;
+  background-color: $pickly-background-primary;
+  color: $pickly-text-primary;
+  transition: $pickly-animations-transition-input;
+
+  &::placeholder {
+    color: $pickly-text-tertiary;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $pickly-border-focus;
+    box-shadow: $pickly-shadows-component-inputFocus;
+  }
+
+  &:disabled {
+    background-color: $pickly-background-secondary;
+    color: $pickly-text-tertiary;
+    cursor: not-allowed;
+  }
+
+  &.error {
+    border-color: $pickly-border-error;
+
+    &:focus {
+      border-color: $pickly-border-error;
+      box-shadow: $pickly-shadows-colored-error-sm;
+    }
+  }
+}
+
+/* Card Mixins */
+@mixin card() {
+  background-color: $pickly-background-primary;
+  border-radius: $pickly-borders-component-card;
+  box-shadow: $pickly-shadows-component-card;
+  padding: $pickly-spacing-semantic-cardPadding;
+  transition: $pickly-animations-transition-shadow;
+
+  &:hover {
+    box-shadow: $pickly-shadows-component-cardHover;
+  }
+}
+
+/* Container Mixins */
+@mixin container($max-width: null) {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $pickly-spacing-semantic-containerPadding;
+  padding-right: $pickly-spacing-semantic-containerPadding;
+
+  @if $max-width {
+    max-width: $max-width;
+  }
+}
+
+/* Grid Mixins */
+@mixin grid($columns: 12, $gap: $pickly-spacing-semantic-gridGap) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+@mixin grid-column($span: 1) {
+  grid-column: span $span;
+}
+
+/* Flexbox Mixins */
+@mixin flex-center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between() {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column() {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Position Mixins */
+@mixin absolute-center() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin absolute-fill() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Animation Mixins */
+@mixin animate($name, $duration: $pickly-animations-duration-normal, $easing: $pickly-animations-easing-smooth) {
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-timing-function: $easing;
+  animation-fill-mode: both;
+}
+
+@mixin transition($properties...) {
+  $transitions: ();
+
+  @each $property in $properties {
+    $transitions: append($transitions, #{$property} $pickly-animations-duration-normal $pickly-animations-easing-smooth, comma);
+  }
+
+  transition: $transitions;
+}
+
+/* Responsive Mixins */
+@mixin mobile-only() {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet-up() {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop-up() {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin large-desktop-up() {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+/* Dark mode support */
+@mixin dark-mode() {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
+/* High contrast support */
+@mixin high-contrast() {
+  @media (prefers-contrast: high) {
+    @content;
+  }
+}
+
+/* Reduced motion support */
+@mixin reduced-motion() {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}
+
+/* Utility Mixins */
+@mixin clearfix() {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    padding-top: percentage($height / $width);
+  }
+
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
